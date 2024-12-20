@@ -22,9 +22,3 @@ variable "instance_type" {
   description = "Instance type for the EC2 instances"
   type        = string
 }
-
-variable "availability_zone" {
-  description = "The Availability Zone to launch the instance in"
-  type        = string
-  default     = "ap-south-1a"  # Specify a supported Availability Zone
-}
