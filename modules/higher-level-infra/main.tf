@@ -1,11 +1,11 @@
 
 module "vpc" {
-  source      = "../VPC"
+  source      = "./modules/vpc"
   cidr_block  = var.vpc_cidr_block
 }
 
 module "ec2" {
-  source        = "../ec2"
+  source        = "./modules/ec2"
   ami_id        = var.ami_id
   instance_type = var.instance_type
   key_name      = var.key_name
