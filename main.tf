@@ -1,19 +1,16 @@
-module "infrastructure" {
-  source              = "./modules/higher-level-infra"
-  vpc_cidr_block      = var.vpc_cidr_block
-  public_subnet_count = var.public_subnet_count
-  public_subnets      = var.public_subnets
-  private_subnet_count = var.private_subnet_count
-  private_subnets     = var.private_subnets
-  instance_count      = var.instance_count
-  ami                 = var.ami
-  instance_type       = var.instance_type
-  allocated_storage   = var.allocated_storage
-  engine              = var.engine
-  instance_class      = var.instance_class
-  db_name             = var.db_name
-  username            = var.username
-  password            = var.password
-  parameter_group_name = var.parameter_group_name
-  skip_final_snapshot = var.skip_final_snapshot
+
+module "infra" {
+  source = "./higher-level-module"
+
+  vpc_cidr_block       = "10.0.0.0/16"
+  ami_id               = "ami-053b12d3152c0cc71"
+  instance_type        = "t2.micro"
+  key_name             = "guru"
+  rds_allocated_storage = 20
+  rds_engine           = "mysql"
+  rds_instance_class   = "db.t2.micro"
+  rds_db_name          = "mydatabase"
+  rds_username         = "admin"
+  rds_password         = "password123"
+  rds_db_subnet_group  = "my-subnet-group"
 }
