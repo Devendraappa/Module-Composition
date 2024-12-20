@@ -14,7 +14,6 @@ module "ec2" {
   instance_count = var.instance_count
   ami            = var.ami
   instance_type  = var.instance_type
-  availability_zone = var.availability_zone
 }
 
 module "rds" {
