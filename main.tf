@@ -8,6 +8,7 @@ module "infrastructure" {
   instance_count      = var.instance_count
   ami                 = var.ami
   instance_type       = var.instance_type
+  availability_zone   = var.availability_zone
   allocated_storage   = var.allocated_storage
   engine              = var.engine
   instance_class      = var.instance_class
