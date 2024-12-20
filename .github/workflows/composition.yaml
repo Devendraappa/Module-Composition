@@ -1,7 +1,7 @@
 name: Terraform Module Compostion
 
 on:
-  push:
+  #push:
     branches:
       - main
   
