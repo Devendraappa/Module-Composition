@@ -1,5 +1,5 @@
 module "infrastructure" {
-  source              = "./modules/infrastructure"
+  source              = "./modules/higher-level-infra"
   vpc_cidr_block      = var.vpc_cidr_block
   public_subnet_count = var.public_subnet_count
   public_subnets      = var.public_subnets
