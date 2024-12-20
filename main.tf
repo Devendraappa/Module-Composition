@@ -5,7 +5,7 @@ module "infra" {
   vpc_cidr_block       = "10.0.0.0/16"
   ami_id               = "ami-053b12d3152c0cc71"
   instance_type        = "t2.micro"
-  key_name             = "guru"
+  key_name             = "desktop"
   rds_allocated_storage = 20
   rds_engine           = "mysql"
   rds_instance_class   = "db.t2.micro"
