@@ -1,5 +1,5 @@
 module "vpc"{
-source = ../vpc"
+source = "../vpc"
 cidr_block = var.vpc_cidr_block 
 public_subnet_count = var.public_subnet_count 
 public_subnets = var.public_subnets 
@@ -12,7 +12,7 @@ vpc_id = module.vpc.vpc_id
 subnet_ids = module.vpc.public_subnet_ids 
 }
 module "rds"{
-source ="../rds"
+source = "../rds"
 vpc_id = module.vpc.vpc_id 
 subnet_ids = module.vpc.private_subnet_ids 
 }
