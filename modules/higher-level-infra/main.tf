@@ -10,7 +10,7 @@ module "ec2" {
   instance_type = var.instance_type
   key_name      = var.key_name
 }
-/*
+
 module "rds" {
   source             = "../rds"
   allocated_storage  = var.rds_allocated_storage
@@ -21,4 +21,4 @@ module "rds" {
   password           = var.rds_password
   db_subnet_group    = var.rds_db_subnet_group
 }
-*/
+
