@@ -1,6 +1,6 @@
 
 module "infra" {
-  source = "./higher-level-module"
+  source = "./modules/higher-level-infra"
 
   vpc_cidr_block       = "10.0.0.0/16"
   ami_id               = "ami-053b12d3152c0cc71"
