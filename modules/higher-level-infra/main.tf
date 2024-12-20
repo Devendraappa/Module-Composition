@@ -1,29 +1,24 @@
+
 module "vpc" {
-  source              = "../vpc"
-  cidr_block          = var.vpc_cidr_block
-  public_subnet_count = var.public_subnet_count
-  public_subnets      = var.public_subnets
-  private_subnet_count = var.private_subnet_count
-  private_subnets     = var.private_subnets
+  source      = "../VPC"
+  cidr_block  = var.vpc_cidr_block
 }
 
 module "ec2" {
-  source         = "../ec2"
-  vpc_id         = module.vpc.vpc_id
-  subnet_ids     = module.vpc.public_subnet_ids
-  instance_count = var.instance_count
-  ami            = var.ami
-  instance_type  = var.instance_type
+  source        = "../ec2"
+  ami_id        = var.ami_id
+  instance_type = var.instance_type
+  key_name      = var.key_name
 }
-
+/*
 module "rds" {
-  source                = "../rds"
-  allocated_storage     = var.allocated_storage
-  engine                = var.engine
-  instance_class        = var.instance_class
-  db_name               = var.db_name
-  username              = var.username
-  password              = var.password
-  parameter_group_name  = var.parameter_group_name
-  skip_final_snapshot   = var.skip_final_snapshot
+  source             = "../rds"
+  allocated_storage  = var.rds_allocated_storage
+  engine             = var.rds_engine
+  instance_class     = var.rds_instance_class
+  db_name            = var.rds_db_name
+  username           = var.rds_username
+  password           = var.rds_password
+  db_subnet_group    = var.rds_db_subnet_group
 }
+*/
