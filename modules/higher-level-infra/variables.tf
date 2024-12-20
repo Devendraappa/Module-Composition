@@ -1,80 +1,40 @@
+
+# VPC Module Inputs
 variable "vpc_cidr_block" {
-  description = "The CIDR block for the VPC"
-  type        = string
+  type = string
 }
 
-variable "public_subnet_count" {
-  description = "Number of public subnets"
-  type        = number
+# EC2 Module Inputs
+variable "ami_id" {
+  type = string
 }
-
-variable "public_subnets" {
-  description = "List of public subnet CIDR blocks"
-  type        = list(string)
-}
-
-variable "private_subnet_count" {
-  description = "Number of private subnets"
-  type        = number
-}
-
-variable "private_subnets" {
-  description = "List of private subnet CIDR blocks"
-  type        = list(string)
-}
-
-variable "instance_count" {
-  description = "Number of EC2 instances"
-  type        = number
-}
-
-variable "ami" {
-  description = "AMI ID for the EC2 instances"
-  type        = string
-}
-
 variable "instance_type" {
-  description = "Instance type for the EC2 instances"
-  type        = string
+  type = string
 }
 
-variable "allocated_storage" {
-  description = "The allocated storage in gigabytes"
-  type        = number
+variable "key_name" {
+  type = string
 }
 
-variable "engine" {
-  description = "The database engine to use"
-  type        = string
+# RDS Module Inputs
+variable "rds_allocated_storage" {
+  type = number
 }
-
-variable "instance_class" {
-  description = "The instance type of the RDS instance"
-  type        = string
+variable "rds_engine" {
+  type = string
 }
-
-variable "db_name" {
-  description = "The name of the database"
-  type        = string
+variable "rds_instance_class" {
+  type = string
 }
-
-variable "username" {
-  description = "The username for the database"
-  type        = string
+variable "rds_db_name" {
+  type = string
 }
-
-variable "password" {
-  description = "The password for the database"
-  type        = string
-  sensitive   = true
+variable "rds_username" {
+  type = string
 }
-
-variable "parameter_group_name" {
-  description = "The name of the DB parameter group to associate"
-  type        = string
+variable "rds_password" {
+  type = string
 }
-
-variable "skip_final_snapshot" {
-  description = "Determines whether a final DB snapshot is created before the DB instance is deleted"
-  type        = bool
+variable "rds_db_subnet_group" {
+  type = string
 }
