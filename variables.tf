@@ -37,7 +37,7 @@ variable "instance_count" {
 variable "ami" {
   description = "AMI ID for the EC2 instances"
   type        = string
-  default     = "ami-0c55b159cbfafe1f0"  # Example AMI ID
+  default     = "ami-053b12d3152c0cc71"  # Example AMI ID
 }
 
 variable "instance_type" {
