@@ -94,15 +94,3 @@ variable "skip_final_snapshot" {
   type        = bool
   default     = true
 }
-
-variable "vpc_security_group_ids" {
-  description = "List of VPC security groups to associate"
-  type        = list(string)
-  default     = []
-}
-
-variable "db_subnet_group_name" {
-  description = "The DB subnet group to associate"
-  type        = string
-  default     = "default"
-}
