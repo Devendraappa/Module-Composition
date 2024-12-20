@@ -78,13 +78,3 @@ variable "skip_final_snapshot" {
   description = "Determines whether a final DB snapshot is created before the DB instance is deleted"
   type        = bool
 }
-
-variable "vpc_security_group_ids" {
-  description = "List of VPC security groups to associate"
-  type        = list(string)
-}
-
-variable "db_subnet_group_name" {
-  description = "The DB subnet group to associate"
-  type        = string
-}
